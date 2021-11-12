@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: cf9066742e1cf4bcf92b8cabe12c125e
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 6017579db2e24758a8106d03d535e466, type: 3}
+  isAssemblyDeclarations: 1
+  assembly: ZEPETO.Script.Leaderboard
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 1
+  overrideWrapperTypes: 1
+  wrapperTypes:
+  - ZEPETO.Script.Leaderboard.LeaderboardAPI
+  - ZEPETO.Script.Leaderboard.CreateLeaderboardResponse
+  - ZEPETO.Script.Leaderboard.DeleteLeaderboardResponse
+  - ZEPETO.Script.Leaderboard.DeleteRankResponse
+  - ZEPETO.Script.Leaderboard.GetAllLeaderboardsResponse
+  - ZEPETO.Script.Leaderboard.GetLeaderboardResponse
+  - ZEPETO.Script.Leaderboard.GetRangeRankResponse
+  - ZEPETO.Script.Leaderboard.GetRankResponse
+  - ZEPETO.Script.Leaderboard.SetScoreResponse
+  - ZEPETO.Script.Leaderboard.RequestBase
+  - ZEPETO.Script.Leaderboard.CreateLeaderboardRequest
+  - ZEPETO.Script.Leaderboard.DeleteLeaderboardRequest
+  - ZEPETO.Script.Leaderboard.DeleteRankRequest
+  - ZEPETO.Script.Leaderboard.GetAllLeaderboardsRequest
+  - ZEPETO.Script.Leaderboard.GetLeaderboardRequest
+  - ZEPETO.Script.Leaderboard.GetRangeRankRequest
+  - ZEPETO.Script.Leaderboard.GetRankRequest
+  - ZEPETO.Script.Leaderboard.SetScoreRequest
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: 
+  references: []
+  typescriptHash: 

@@ -1,0 +1,25 @@
+ZEPETO Multiplay Bootstrap
+===================================================
+
+███████╗███████╗██████╗ ███████╗████████╗ ██████╗ 
+╚══███╔╝██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔═══██╗
+  ███╔╝ █████╗  ██████╔╝█████╗     ██║   ██║   ██║
+ ███╔╝  ██╔══╝  ██╔═══╝ ██╔══╝     ██║   ██║   ██║
+███████╗███████╗██║     ███████╗   ██║   ╚██████╔╝
+╚══════╝╚══════╝╚═╝     ╚══════╝   ╚═╝    ╚═════╝ 
+
+===================================================
+host : '192.168.0.11'
+===================================================
+Source File :  C:\Users\pc\Desktop\ZepetoTest01\Assets\World.multiplay\index.ts
+[info] 2021-11-09T13:50:43.397Z gameserver 192.168.0.11:0 listen
+[info] 2021-11-09T13:54:32.690Z gameserver multiplay room application created.
+[OnJoin] sessionId : USER_3TdtTTBR7JY, HashCode : NOJZ64, userId : 60d73635f6b2e45c70a33ef1
+[info] 2021-11-09T13:54:32.767Z gameserver session [USER_3TdtTTBR7JY] in room [ROOM_3yD0lDbNJ] joined.
+[info] 2021-11-09T13:54:32.775Z gameserver TypeError: Cannot read property 'reconnection' of undefined
+[info] 2021-11-09T13:54:42.487Z gameserver session [USER_3TdtTTBR7JY] in room [ROOM_3yD0lDbNJ] leaved.
+[info] 2021-11-09T13:54:53.108Z gameserver multiplay room application created.
+[OnJoin] sessionId : USER_SerL5dB4FMI, HashCode : NOJZ64, userId : 60d73635f6b2e45c70a33ef1
+[info] 2021-11-09T13:54:53.184Z gameserver session [USER_SerL5dB4FMI] in room [ROOM_GgTj_TBYu] joined.
+[info] 2021-11-09T13:54:53.190Z gameserver TypeError: Cannot read property 'reconnection' of undefined
+[info] 2021-11-09T13:54:59.989Z gameserver session [USER_SerL5dB4FMI] in room [ROOM_GgTj_TBYu] leaved.

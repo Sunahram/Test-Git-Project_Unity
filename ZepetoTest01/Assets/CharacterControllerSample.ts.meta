@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 61b4ecb93771c29489acaf048924637a
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_World_1 = require(\"ZEPETO.World\");\r\nclass CharacterControllerSample
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        $extension(\"ZEPETO.Character.Controller.ZepetoPlayersExtension\").CreatePlayerWithUserId(ZEPETO_Character_Controller_1.ZepetoPlayers.instance,
+    \"\", ZEPETO_World_1.WorldService.userId, new ZEPETO_Character_Controller_1.SpawnInfo(),
+    true);\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            let _player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\r\n       
+    });\r\n    }\r\n}\r\nexports.default = CharacterControllerSample;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2hhcmFjdGVyQ29udHJvbGxlclNhbXBsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNoYXJhY3RlckNvbnRyb2xsZXJTYW1wbGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsNkVBQXNFO0FBQ3RFLCtDQUE0QztBQUc1QyxNQUFxQix5QkFBMEIsU0FBUSxxQ0FBcUI7SUFFeEUsS0FBSztRQUNELGlFQUF1QixzQkFBc0IsQ0FBN0MsMkNBQWEsQ0FBQyxRQUFRLEVBQXdCLEVBQUUsRUFBRSwyQkFBWSxDQUFDLE1BQU0sRUFBRSxJQUFJLHVDQUFTLEVBQUUsRUFDbEYsSUFBSSxFQUFFO1FBQ1YsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtZQUN2RCxJQUFJLE9BQU8sR0FBRywyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUM7UUFDckQsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0NBRUo7QUFWRCw0Q0FVQyJ9","assetPath":"Assets/CharacterControllerSample.ts","manifest":{"properties":[],"name":"CharacterControllerSample","description":""},"isCompiled":true}'
+  typescriptHash: cbad993b8b1ba32f169d40c2fcf4b7ba

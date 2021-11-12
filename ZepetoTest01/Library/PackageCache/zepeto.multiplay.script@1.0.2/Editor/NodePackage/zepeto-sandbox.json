@@ -1,0 +1,104 @@
+{
+	"id": "@zepeto/sandbox@1.1.2",
+	"name": "@zepeto/sandbox",
+	"version": "1.1.2",
+	"size": 2130913,
+	"unpackedSize": 5556432,
+	"shasum": "7fe08cffefc44a9e2223bb59593ca01c21efdf5b",
+	"integrity": "sha512-WjjOCeZcC1DINaz+bNw55V77GiqUEuAvONERvjo9bWkmTXcxhT6xoYIdatmBbZt4PclQNY0AKLREgWMSc1bx0g==",
+	"filename": "zepeto-sandbox.tgz",
+	"files": [
+		{
+			"path": "bootstrap.js",
+			"size": 3257,
+			"mode": 420
+		},
+		{
+			"path": "dist/bytenode/cli.js",
+			"size": 4467,
+			"mode": 493
+		},
+		{
+			"path": "dist/contextify.js",
+			"size": 34304,
+			"mode": 420
+		},
+		{
+			"path": "dist/fixasync.js",
+			"size": 2784,
+			"mode": 420
+		},
+		{
+			"path": "dist/bytenode/index.js",
+			"size": 5338,
+			"mode": 420
+		},
+		{
+			"path": "dist/sandbox.js",
+			"size": 17478,
+			"mode": 420
+		},
+		{
+			"path": "bootstrap.jsc",
+			"size": 5104864,
+			"mode": 420
+		},
+		{
+			"path": "cli.jsc",
+			"size": 336192,
+			"mode": 420
+		},
+		{
+			"path": "template/.vscode/launch.json",
+			"size": 513,
+			"mode": 420
+		},
+		{
+			"path": "package.json",
+			"size": 1314,
+			"mode": 420
+		},
+		{
+			"path": "template/package.json",
+			"size": 282,
+			"mode": 420
+		},
+		{
+			"path": "template/schemas.json",
+			"size": 33,
+			"mode": 420
+		},
+		{
+			"path": "template/tsconfig.json",
+			"size": 404,
+			"mode": 420
+		},
+		{
+			"path": "README.md",
+			"size": 298,
+			"mode": 420
+		},
+		{
+			"path": "dist/read.sh",
+			"size": 4214,
+			"mode": 420
+		},
+		{
+			"path": "template/index.d.ts",
+			"size": 40247,
+			"mode": 420
+		},
+		{
+			"path": "template/SchemaTypes/index.d.ts",
+			"size": 153,
+			"mode": 420
+		},
+		{
+			"path": "template/index.ts",
+			"size": 290,
+			"mode": 420
+		}
+	],
+	"entryCount": 18,
+	"bundled": []
+}

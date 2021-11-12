@@ -1,0 +1,88 @@
+fileFormatVersion: 2
+guid: 21517b9b9fc71d946a9f39dacca08ac1
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst ClientRoomEnter_1 = require(\"./ClientRoomEnter\");\r\nclass
+    CatScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n       
+    console.log(\"Test6666\");\r\n        this.cat = this.gameObject;\r\n       
+    this.bool = true;\r\n        this.StartCoroutine(this.CatMovingTowardPlayer());\r\n       
+    //this.StartCoroutine(this.CatMoving());\r\n        //this.StartCoroutine(this.RoutineRepeat());\r\n       
+    //this.FollowingCondition = false;\r\n    }\r\n    Update() {\r\n        this.PlayerPosition_X
+    = ClientRoomEnter_1.default.PlayerPosition_X;\r\n        this.PlayerPosition_Z
+    = ClientRoomEnter_1.default.PlayerPosition_Z;\r\n        //console.log(this.PlayerPosition_X);\r\n       
+    //console.log(this.PlayerPosition_Z);\r\n    }\r\n    //Idle\r\n    CatRoutine_0()
+    {\r\n        //console.log(\"Idle State\");\r\n        this.cat.GetComponent($typeof(UnityEngine_1.Animator)).SetInteger(\"state\",
+    0);\r\n    }\r\n    //Walk\r\n    CatRoutine_1() {\r\n        //console.log(\"Walk
+    State\");\r\n        this.cat.GetComponent($typeof(UnityEngine_1.Animator)).SetInteger(\"state\",
+    1);\r\n    }\r\n    //Sit\r\n    CatRoutine_2() {\r\n        //console.log(\"Sit
+    State\");\r\n        this.cat.GetComponent($typeof(UnityEngine_1.Animator)).SetInteger(\"state\",
+    2);\r\n    }\r\n    CatRoutine_2_1() {\r\n        this.cat.GetComponent($typeof(UnityEngine_1.Animator)).SetInteger(\"state\",
+    3);\r\n    }\r\n    //Moving Cat\r\n    *CatMoving() {\r\n        while (true)
+    {\r\n            yield null;\r\n            if (this.Random_Routine == 1) {\r\n               
+    this.target = new UnityEngine_1.Vector3(this.randomPos_X * this.randomPos_X_sign
+    * 100, 0, this.randomPos_Z * this.randomPos_Z_sign * 100);\r\n               
+    this.direction = UnityEngine_1.Vector3.op_Subtraction(this.target, this.cat.transform.position);\r\n               
+    this.direction.y = 0;\r\n                this.rot = UnityEngine_1.Quaternion.LookRotation(this.direction.normalized);\r\n               
+    this.cat.transform.rotation = this.rot;\r\n                this.cat.transform.position
+    = UnityEngine_1.Vector3.op_Addition(this.cat.transform.position, new UnityEngine_1.Vector3(this.randomPos_X
+    * this.randomPos_X_sign * 0.05, 0, this.randomPos_Z * this.randomPos_Z_sign *
+    0.05));\r\n                yield new UnityEngine_1.WaitForSeconds(0.1);\r\n           
+    }\r\n        }\r\n    }\r\n    *CatMovingTowardPlayer() {\r\n        while (true)
+    {\r\n            yield null;\r\n            if (this.bool == true) {\r\n               
+    this.x = this.PlayerPosition_X - this.cat.transform.position.x;\r\n               
+    this.z = this.PlayerPosition_Z - this.cat.transform.position.z;\r\n               
+    this.direction2 = new UnityEngine_1.Vector3(this.x, 0, this.z);\r\n               
+    this.direction2.y = 0;\r\n                this.rot2 = UnityEngine_1.Quaternion.LookRotation(this.direction2.normalized);\r\n               
+    this.cat.transform.rotation = this.rot2;\r\n                this.x2 = this.PlayerPosition_X
+    - 0.01;\r\n                this.z2 = this.PlayerPosition_Z - 0.01;\r\n               
+    this.pos = new UnityEngine_1.Vector3(this.x2, 0, this.z2);\r\n               
+    console.log(UnityEngine_1.Vector3.Distance(this.cat.transform.position, this.pos));\r\n               
+    if (UnityEngine_1.Vector3.Distance(this.cat.transform.position, this.pos) <=
+    3) {\r\n                    console.log(\"stop\");\r\n                    this.cat.GetComponent($typeof(UnityEngine_1.Animator)).SetInteger(\"state\",
+    2);\r\n                }\r\n                else {\r\n                    this.cat.transform.position
+    = UnityEngine_1.Vector3.op_Addition(this.cat.transform.position, new UnityEngine_1.Vector3(this.x
+    * 0.05, 0, this.z * 0.05));\r\n                    this.cat.GetComponent($typeof(UnityEngine_1.Animator)).SetInteger(\"state\",
+    1);\r\n                    console.log(\"go\");\r\n                }\r\n               
+    yield new UnityEngine_1.WaitForSeconds(0.1);\r\n            }\r\n        }\r\n   
+    }\r\n    //Following Cat\r\n    *CatFollowing(player) {\r\n        while (true)
+    {\r\n            yield null;\r\n            if (this.FollowingCondition == true)
+    {\r\n            }\r\n        }\r\n    }\r\n    //Routine Setting\r\n    *CatRoutine()
+    {\r\n        this.Random_Routine_Pre = this.Random_Routine;\r\n        this.Random_Routine
+    = Math.floor(Math.random() * 3);\r\n        while (this.Random_Routine_Pre ==
+    this.Random_Routine) {\r\n            this.Random_Routine = Math.floor(Math.random()
+    * 3);\r\n        }\r\n        //console.log(\"Routine num : \" + this.Random_Routine);\r\n       
+    if (this.Random_Routine == 0) {\r\n            this.CatRoutine_0();\r\n       
+    }\r\n        else if (this.Random_Routine == 1) {\r\n            this.CatRoutine_1();\r\n           
+    this.randomPos_X = Math.random();\r\n            this.randomPos_Z = Math.random();\r\n           
+    this.randomPos_X_sign = Math.random();\r\n            if (this.randomPos_X_sign
+    >= 0.5) {\r\n                this.randomPos_X_sign = 1;\r\n            }\r\n           
+    else {\r\n                this.randomPos_X_sign = -1;\r\n            }\r\n           
+    this.randomPos_Z_sign = Math.random();\r\n            if (this.randomPos_Z_sign
+    >= 0.5) {\r\n                this.randomPos_Z_sign = 1;\r\n            }\r\n           
+    else {\r\n                this.randomPos_Z_sign = -1;\r\n            }\r\n       
+    }\r\n        else if (this.Random_Routine == 2) {\r\n            this.CatRoutine_2();\r\n           
+    yield new UnityEngine_1.WaitForSeconds(3);\r\n            this.CatRoutine_2_1();\r\n       
+    }\r\n        this.StopCoroutine(this.CatRoutine());\r\n    }\r\n    *RoutineRepeat()
+    {\r\n        while (true) {\r\n            this.StartCoroutine(this.CatRoutine());\r\n           
+    this.Random_RunTime = Math.floor(Math.random() * 10) + 5;\r\n            //console.log(\"RunTime
+    num : \" + this.Random_RunTime);\r\n            yield new UnityEngine_1.WaitForSeconds(this.Random_RunTime);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = CatScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2F0U2NyaXB0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiQ2F0U2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQStGO0FBQy9GLGlEQUFxRDtBQUNyRCx1REFBK0M7QUFHL0MsTUFBcUIsU0FBVSxTQUFRLHFDQUFxQjtJQVF4RCxLQUFLO1FBQ0QsT0FBTyxDQUFDLEdBQUcsQ0FBQyxVQUFVLENBQUMsQ0FBQztRQUV4QixJQUFJLENBQUMsR0FBRyxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUM7UUFFM0IsSUFBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7UUFDakIsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMscUJBQXFCLEVBQUUsQ0FBQyxDQUFDO1FBRWxELHdDQUF3QztRQUN4Qyw0Q0FBNEM7UUFFNUMsa0NBQWtDO0lBQ3RDLENBQUM7SUFFRCxNQUFNO1FBQ0YsSUFBSSxDQUFDLGdCQUFnQixHQUFHLHlCQUFlLENBQUMsZ0JBQWdCLENBQUM7UUFDekQsSUFBSSxDQUFDLGdCQUFnQixHQUFHLHlCQUFlLENBQUMsZ0JBQWdCLENBQUM7UUFDekQscUNBQXFDO1FBQ3JDLHFDQUFxQztJQUV6QyxDQUFDO0lBRUQsTUFBTTtJQUNOLFlBQVk7UUFDUiw0QkFBNEI7UUFDNUIsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLFNBQUMsc0JBQVEsR0FBSSxVQUFVLENBQUMsT0FBTyxFQUFFLENBQUMsQ0FBQyxDQUFDO0lBQzdELENBQUM7SUFFRCxNQUFNO0lBQ04sWUFBWTtRQUNSLDRCQUE0QjtRQUM1QixJQUFJLENBQUMsR0FBRyxDQUFDLFlBQVksU0FBQyxzQkFBUSxHQUFJLFVBQVUsQ0FBQyxPQUFPLEVBQUUsQ0FBQyxDQUFDLENBQUM7SUFDN0QsQ0FBQztJQUVELEtBQUs7SUFDTCxZQUFZO1FBQ1IsMkJBQTJCO1FBQzNCLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxTQUFDLHNCQUFRLEdBQUksVUFBVSxDQUFDLE9BQU8sRUFBRSxDQUFDLENBQUMsQ0FBQztJQUM3RCxDQUFDO0lBRUQsY0FBYztRQUNWLElBQUksQ0FBQyxHQUFHLENBQUMsWUFBWSxTQUFDLHNCQUFRLEdBQUksVUFBVSxDQUFDLE9BQU8sRUFBRSxDQUFDLENBQUMsQ0FBQztJQUM3RCxDQUFDO0lBWUQsWUFBWTtJQUNaLENBQUMsU0FBUztRQUNOLE9BQU8sSUFBSSxFQUFFO1lBQ1QsTUFBTSxJQUFJLENBQUM7WUFFWCxJQUFJLElBQUksQ0FBQyxjQUFjLElBQUksQ0FBQyxFQUFFO2dCQUMxQixJQUFJLENBQUMsTUFBTSxHQUFHLElBQUkscUJBQU8sQ0FBQyxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxnQkFBZ0IsR0FBRyxHQUFHLEVBQUUsQ0FBQyxFQUFFLElBQUksQ0FBQyxXQUFXLEdBQUcsSUFBSSxDQUFDLGdCQUFnQixHQUFHLEdBQUcsQ0FBQyxDQUFDO2dCQUM3SCxJQUFJLENBQUMsU0FBUyxHQTFFb0IscUJBQU8sQ0E0TTZzZixjQUFlLENBbElwdmYsSUFBSSxDQUFDLE1BQU0sRUFBRyxJQUFJLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxRQUFRLENBQUEsQ0FBQztnQkFDM0QsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDO2dCQUVyQixJQUFJLENBQUMsR0FBRyxHQUFHLHdCQUFVLENBQUMsWUFBWSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsVUFBVSxDQUFDLENBQUM7Z0JBRTlELElBQUksQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFFBQVEsR0FBRyxJQUFJLENBQUMsR0FBRyxDQUFDO2dCQUV2QyxJQUFJLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBakZPLHFCQUFPLENBNE0rbmYsV0FBWSxDQTNIcHJmLElBQUksQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBSSxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLFdBQVcsR0FBRyxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsSUFBSSxFQUFFLENBQUMsRUFBRSxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxnQkFBZ0IsR0FBRyxJQUFJLENBQUMsRUFBQztnQkFFaEosTUFBTSxJQUFJLDRCQUFjLENBQUMsR0FBRyxDQUFDLENBQUM7YUFDakM7U0FDSjtJQUNMLENBQUM7SUFhRCxDQUFFLHFCQUFxQjtRQUNuQixPQUFPLElBQUksRUFBRTtZQUNULE1BQU0sSUFBSSxDQUFDO1lBRVgsSUFBSSxJQUFJLENBQUMsSUFBSSxJQUFJLElBQUksRUFBRTtnQkFDbkIsSUFBSSxDQUFDLENBQUMsR0FBRyxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsSUFBSSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQztnQkFDL0QsSUFBSSxDQUFDLENBQUMsR0FBRyxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsSUFBSSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQztnQkFFL0QsSUFBSSxDQUFDLFVBQVUsR0FBRyxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQUMsQ0FBQyxDQUFDO2dCQUNqRCxJQUFJLENBQUMsVUFBVSxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUM7Z0JBRXRCLElBQUksQ0FBQyxJQUFJLEdBQUcsd0JBQVUsQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxVQUFVLENBQUMsQ0FBQztnQkFDaEUsSUFBSSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxHQUFHLElBQUksQ0FBQyxJQUFJLENBQUM7Z0JBRXhDLElBQUksQ0FBQyxFQUFFLEdBQUcsSUFBSSxDQUFDLGdCQUFnQixHQUFHLElBQUksQ0FBQztnQkFDdkMsSUFBSSxDQUFDLEVBQUUsR0FBRyxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsSUFBSSxDQUFDO2dCQUN2QyxJQUFJLENBQUMsR0FBRyxHQUFHLElBQUkscUJBQU8sQ0FBQyxJQUFJLENBQUMsRUFBRSxFQUFFLENBQUMsRUFBRSxJQUFJLENBQUMsRUFBRSxDQUFDLENBQUM7Z0JBRTVDLE9BQU8sQ0FBQyxHQUFHLENBQUMscUJBQU8sQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFFLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDO2dCQUVyRSxJQUFJLHFCQUFPLENBQUMsUUFBUSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFBRSxJQUFJLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxFQUFFO29CQUM5RCxPQUFPLENBQUMsR0FBRyxDQUFDLE1BQU0sQ0FBQyxDQUFDO29CQUNwQixJQUFJLENBQUMsR0FBRyxDQUFDLFlBQVksU0FBQyxzQkFBUSxHQUFJLFVBQVUsQ0FBQyxPQUFPLEVBQUUsQ0FBQyxDQUFDLENBQUM7aUJBQzVEO3FCQUNJO29CQUNELElBQUksQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFFBQVEsR0E1SEcscUJBQU8sQ0E0TStuZixXQUFZLENBaEZocmYsSUFBSSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFJLElBQUkscUJBQU8sQ0FBQyxJQUFJLENBQUMsQ0FBQyxHQUFHLElBQUksRUFBRSxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQUMsR0FBRyxJQUFJLENBQUMsRUFBQztvQkFDNUUsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLFNBQUMsc0JBQVEsR0FBSSxVQUFVLENBQUMsT0FBTyxFQUFFLENBQUMsQ0FBQyxDQUFDO29CQUN6RCxPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxDQUFDO2lCQUNyQjtnQkFDRCxNQUFNLElBQUksNEJBQWMsQ0FBQyxHQUFHLENBQUMsQ0FBQzthQUNqQztTQUNKO0lBQ0wsQ0FBQztJQUdELGVBQWU7SUFDZixDQUFDLFlBQVksQ0FBQyxNQUFNO1FBQ2hCLE9BQU8sSUFBSSxFQUFFO1lBQ1QsTUFBTSxJQUFJLENBQUM7WUFFWCxJQUFJLElBQUksQ0FBQyxrQkFBa0IsSUFBSSxJQUFJLEVBQUU7YUFFcEM7U0FDSjtJQUNMLENBQUM7SUFPRCxpQkFBaUI7SUFDakIsQ0FBQyxVQUFVO1FBQ1AsSUFBSSxDQUFDLGtCQUFrQixHQUFHLElBQUksQ0FBQyxjQUFjLENBQUM7UUFDOUMsSUFBSSxDQUFDLGNBQWMsR0FBRyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxNQUFNLEVBQUUsR0FBRyxDQUFDLENBQUMsQ0FBQztRQUVwRCxPQUFPLElBQUksQ0FBQyxrQkFBa0IsSUFBSSxJQUFJLENBQUMsY0FBYyxFQUFFO1lBQ25ELElBQUksQ0FBQyxjQUFjLEdBQUcsSUFBSSxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsTUFBTSxFQUFFLEdBQUcsQ0FBQyxDQUFDLENBQUM7U0FDdkQ7UUFFRCxzREFBc0Q7UUFFdEQsSUFBSSxJQUFJLENBQUMsY0FBYyxJQUFJLENBQUMsRUFBRTtZQUMxQixJQUFJLENBQUMsWUFBWSxFQUFFLENBQUM7U0FDdkI7YUFDSSxJQUFJLElBQUksQ0FBQyxjQUFjLElBQUksQ0FBQyxFQUFFO1lBQy9CLElBQUksQ0FBQyxZQUFZLEVBQUUsQ0FBQztZQUVwQixJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxNQUFNLEVBQUUsQ0FBQztZQUNqQyxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxNQUFNLEVBQUUsQ0FBQztZQUVqQyxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxDQUFDO1lBQ3RDLElBQUksSUFBSSxDQUFDLGdCQUFnQixJQUFJLEdBQUcsRUFBRTtnQkFDOUIsSUFBSSxDQUFDLGdCQUFnQixHQUFHLENBQUMsQ0FBQzthQUM3QjtpQkFDSTtnQkFDRCxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsQ0FBQyxDQUFDLENBQUM7YUFDOUI7WUFFRCxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxDQUFDO1lBQ3RDLElBQUksSUFBSSxDQUFDLGdCQUFnQixJQUFJLEdBQUcsRUFBRTtnQkFDOUIsSUFBSSxDQUFDLGdCQUFnQixHQUFHLENBQUMsQ0FBQzthQUM3QjtpQkFDSTtnQkFDRCxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsQ0FBQyxDQUFDLENBQUM7YUFDOUI7U0FDSjthQUNJLElBQUksSUFBSSxDQUFDLGNBQWMsSUFBSSxDQUFDLEVBQUU7WUFDL0IsSUFBSSxDQUFDLFlBQVksRUFBRSxDQUFDO1lBQ3BCLE1BQU0sSUFBSSw0QkFBYyxDQUFDLENBQUMsQ0FBQyxDQUFDO1lBQzVCLElBQUksQ0FBQyxjQUFjLEVBQUUsQ0FBQztTQUN6QjtRQUVELElBQUksQ0FBQyxhQUFhLENBQUMsSUFBSSxDQUFDLFVBQVUsRUFBRSxDQUFDLENBQUM7SUFDMUMsQ0FBQztJQUVELENBQUMsYUFBYTtRQUNWLE9BQU8sSUFBSSxFQUFFO1lBQ1QsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUFFLENBQUMsQ0FBQztZQUV2QyxJQUFJLENBQUMsY0FBYyxHQUFHLElBQUksQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLEVBQUUsQ0FBQyxHQUFHLENBQUMsQ0FBQztZQUN6RCxzREFBc0Q7WUFDdEQsTUFBTSxJQUFJLDRCQUFjLENBQUMsSUFBSSxDQUFDLGNBQWMsQ0FBQyxDQUFDO1NBQ2pEO0lBQ0wsQ0FBQztDQUNKO0FBdk1ELDRCQXVNQyJ9","assetPath":"Assets/Cat_Setting_Script/CatScript.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"cat","type":"UnityEngine.GameObject","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"PlayerPosition","type":"UnityEngine.Vector3","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"PlayerPosition_X","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"PlayerPosition_Z","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"randomPos_X","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"randomPos_Z","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"randomPos_X_sign","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"randomPos_Z_sign","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"target","type":"UnityEngine.Vector3","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"direction","type":"UnityEngine.Vector3","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"rot","type":"UnityEngine.Quaternion","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"direction2","type":"UnityEngine.Vector3","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"rot2","type":"UnityEngine.Quaternion","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"bool","type":"System.Boolean","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"x","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"z","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"x2","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"z2","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"pos","type":"UnityEngine.Vector3","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"FollowingCondition","type":"System.Boolean","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"Random_Routine_Pre","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"Random_Routine","type":"System.Int32","isArray":false,"attributes":[]},{"assembly":"mscorlib","name":"Random_RunTime","type":"System.Int32","isArray":false,"attributes":[]}],"name":"CatScript","description":""},"isCompiled":true}'
+  typescriptHash: 761a8496839a8b2f7d85805db26d6d2c
